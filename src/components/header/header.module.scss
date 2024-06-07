@@ -1,0 +1,96 @@
+/* header.module.scss */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1c2a48; /* Dark background color */
+  color: #fff;
+  font-family: "Nunito", sans-serif;
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    span {
+      color: #ff6347; /* Two-tone color for "Starter" */
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 5px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &.active {
+        color: #ff6347; /* Active link color */
+        &:after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 2px;
+          background-color: #ff6347;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  .auth-buttons {
+    display: flex;
+    gap: 1rem;
+
+    .get-started {
+      background-color: #007bff;
+      border: none;
+      padding: 0.5rem 1rem;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #1c2a48;
+      padding: 1rem;
+
+      &.show {
+        display: flex;
+      }
+    }
+
+    .hamburger {
+      display: block;
+    }
+  }
+}
