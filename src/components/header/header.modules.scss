@@ -1,15 +1,14 @@
-/* src/index.css */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
-body {
+.header {
   font-family: "Nunito", sans-serif;
-}
-
-h1 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-}
-p {
-  font-family: "Roboto", sans-serif;
   font-weight: 400;
+
+  h1 {
+    font-weight: 700;
+  }
+
+  p {
+    font-weight: 400;
+  }
 }
