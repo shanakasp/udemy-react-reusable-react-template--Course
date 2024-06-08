@@ -11,6 +11,7 @@ const Header = () => {
 
   const handleSetActiveLink = (link) => {
     setActiveLink(link);
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -38,12 +39,20 @@ const Header = () => {
           Dashboard
         </a>
         <div className={styles["auth-buttons"]}>
-          <a href="#login">Login</a>
-          <a href="#register">Register</a>
-          <button className={styles["get-started"]}>Get Started</button>
+          <a href="#login" onClick={() => handleSetActiveLink("login")}>
+            Login
+          </a>
+          <a href="#register" onClick={() => handleSetActiveLink("register")}>
+            Register
+          </a>
+          <button
+            className={styles["get-started"]}
+            onClick={() => handleSetActiveLink("get-started")}
+          >
+            Get Started
+          </button>
         </div>
       </div>
-
       <div className={styles.hamburger} onClick={toggleMobileMenu}>
         &#9776;
       </div>
@@ -64,9 +73,18 @@ const Header = () => {
             Dashboard
           </a>
           <div className={styles["auth-buttons"]}>
-            <a href="#login">Login</a>
-            <a href="#register">Register</a>
-            <button className={styles["get-started"]}>Get Started</button>
+            <a href="#login" onClick={() => handleSetActiveLink("login")}>
+              Login
+            </a>
+            <a href="#register" onClick={() => handleSetActiveLink("register")}>
+              Register
+            </a>
+            <button
+              className={styles["get-started"]}
+              onClick={() => handleSetActiveLink("get-started")}
+            >
+              Get Started
+            </button>
           </div>
         </div>
       )}
