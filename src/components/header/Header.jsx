@@ -37,15 +37,39 @@ const Header = () => {
         >
           Dashboard
         </a>
+        <div className={styles["auth-buttons"]}>
+          <a href="#login">Login</a>
+          <a href="#register">Register</a>
+          <button className={styles["get-started"]}>Get Started</button>
+        </div>
       </div>
-      <div className={styles["auth-buttons"]}>
-        <a href="#login">Login</a>
-        <a href="#register">Register</a>
-        <button className={styles["get-started"]}>Get Started</button>
-      </div>
+
       <div className={styles.hamburger} onClick={toggleMobileMenu}>
         &#9776;
       </div>
+      {isMobileMenuOpen && (
+        <div className={`${styles["nav-links"]} ${styles.show}`}>
+          <a
+            href="#home"
+            className={activeLink === "home" ? "active" : ""}
+            onClick={() => handleSetActiveLink("home")}
+          >
+            Home
+          </a>
+          <a
+            href="#dashboard"
+            className={activeLink === "dashboard" ? "active" : ""}
+            onClick={() => handleSetActiveLink("dashboard")}
+          >
+            Dashboard
+          </a>
+          <div className={styles["auth-buttons"]}>
+            <a href="#login">Login</a>
+            <a href="#register">Register</a>
+            <button className={styles["get-started"]}>Get Started</button>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
