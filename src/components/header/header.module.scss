@@ -1,100 +1,228 @@
-/* header.module.scss */
+// @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+// .header {
+//   background-color: #1c2a48;
+//   color: #fff;
+//   padding: 1rem 2rem;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   position: relative;
+//   z-index: 1000;
+//   font-family: "Nunito", sans-serif;
+
+//   .logo {
+//     font-size: 1.5rem;
+
+//     span {
+//       color: #ff6347;
+//     }
+//   }
+
+//   .nav-links {
+//     display: flex;
+//     align-items: center;
+
+//     a {
+//       margin: 0 1rem;
+//       text-decoration: none;
+//       color: #fff;
+
+//       &.active {
+//         color: #ff6347;
+//         text-decoration: underline;
+//       }
+
+//       &:hover {
+//         color: #ff6347;
+//       }
+//     }
+
+//     .auth-buttons {
+//       display: flex;
+//       align-items: center;
+
+//       a {
+//         margin: 0 1rem;
+//         text-decoration: none;
+//         color: #fff;
+
+//         &:hover {
+//           color: #ff6347;
+//         }
+//       }
+
+//       .get-started {
+//         background-color: #007bff;
+//         color: #fff;
+//         border: none;
+//         padding: 0.5rem 1rem;
+//         border-radius: 0.25rem;
+//         cursor: pointer;
+
+//         &:hover {
+//           background-color: #0056b3;
+//         }
+//       }
+//     }
+//   }
+
+//   .hamburger {
+//     display: none;
+//     font-size: 2rem;
+//     cursor: pointer;
+//   }
+
+//   @media (max-width: 768px) {
+//     .nav-links {
+//       display: none;
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       width: 100%;
+//       height: 100vh;
+//       background-color: rgba(28, 42, 72, 0.95);
+//       flex-direction: column;
+//       justify-content: center;
+//       align-items: center;
+
+//       &.show {
+//         display: flex;
+//         z-index: 999;
+//       }
+
+//       a {
+//         margin: 1rem 0;
+//         font-size: 1.5rem;
+//       }
+
+//       .auth-buttons {
+//         flex-direction: column;
+
+//         a {
+//           margin: 0.5rem 0;
+//           font-size: 1.5rem;
+//         }
+
+//         .get-started {
+//           margin-top: 1rem;
+//         }
+//       }
+//     }
+
+//     .hamburger {
+//       display: block;
+//     }
+//   }
+// }
+
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 .header {
+  background-color: #1c2a48;
+  color: #fff;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #1c2a48; /* Dark background color */
-  color: #fff;
+  position: relative;
   font-family: "Nunito", sans-serif;
+  z-index: 1000;
 
   .logo {
     font-size: 1.5rem;
-    font-weight: bold;
 
     span {
-      color: #ff6347; /* Two-tone color for "Starter" */
+      color: #ff6347;
     }
   }
 
   .nav-links {
     display: flex;
-    gap: 1.5rem;
+    align-items: center;
 
     a {
-      color: #fff;
+      margin: 0 1rem;
       text-decoration: none;
-      position: relative;
-      padding-bottom: 5px;
-
-      &:hover {
-        color: #ff6347;
-      }
+      color: #fff;
 
       &.active {
-        color: #ff6347; /* Active link color */
-        &:after {
-          content: "";
-          display: block;
-          width: 100%;
-          height: 2px;
-          background-color: #ff6347;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-        }
+        color: #ff6347;
+        text-decoration: underline;
       }
-    }
-  }
-
-  .auth-buttons {
-    display: flex;
-    gap: 1rem;
-
-    a {
-      color: #fff;
-      text-decoration: none;
 
       &:hover {
         color: #ff6347;
       }
     }
 
-    .get-started {
-      background-color: #007bff;
-      border: none;
-      padding: 0.5rem 1rem;
-      color: #fff;
-      cursor: pointer;
-      border-radius: 5px;
+    .auth-buttons {
+      display: flex;
+      align-items: center;
 
-      &:hover {
-        background-color: #0056b3;
+      a {
+        margin: 0 1rem;
+        text-decoration: none;
+        color: #fff;
+
+        &:hover {
+          color: #ff6347;
+        }
+      }
+
+      .get-started {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #0056b3;
+        }
       }
     }
   }
 
   .hamburger {
     display: none;
-    cursor: pointer;
     font-size: 2rem;
+    cursor: pointer;
   }
 
   @media (max-width: 768px) {
     .nav-links {
       display: none;
-      flex-direction: column;
       position: absolute;
-      top: 60px;
+      top: 100%;
       left: 0;
       width: 100%;
       background-color: #1c2a48;
-      padding: 1rem;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 
       &.show {
         display: flex;
+      }
+
+      a {
+        margin: 1rem 0;
+        font-size: 1.5rem;
+      }
+
+      .auth-buttons {
+        flex-direction: column;
+
+        a {
+          margin: 0.5rem 0;
+          font-size: 1.5rem;
+        }
+
+        .get-started {
+          margin-top: 1rem;
+        }
       }
     }
 
