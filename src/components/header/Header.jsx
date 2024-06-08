@@ -3,9 +3,14 @@ import styles from "./header.module.scss";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("home");
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleSetActiveLink = (link) => {
+    setActiveLink(link);
   };
 
   return (
@@ -18,10 +23,20 @@ const Header = () => {
           isMobileMenuOpen ? styles.show : ""
         }`}
       >
-        <a href="#home" className="active">
+        <a
+          href="#home"
+          className={activeLink === "home" ? "active" : ""}
+          onClick={() => handleSetActiveLink("home")}
+        >
           Home
         </a>
-        <a href="#dashboard">Dashboard</a>
+        <a
+          href="#dashboard"
+          className={activeLink === "dashboard" ? "active" : ""}
+          onClick={() => handleSetActiveLink("dashboard")}
+        >
+          Dashboard
+        </a>
       </div>
       <div className={styles["auth-buttons"]}>
         <a href="#login">Login</a>

@@ -53,6 +53,15 @@
     display: flex;
     gap: 1rem;
 
+    a {
+      color: #fff;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
     .get-started {
       background-color: #007bff;
       border: none;
