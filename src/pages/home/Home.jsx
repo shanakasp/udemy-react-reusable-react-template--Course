@@ -1,6 +1,8 @@
+import { useSelector } from "react-redux";
 import styles from "./home.module.scss";
 
 function Home() {
+  const { name } = useSelector((state) => state.data);
   return (
     <div className={styles.body}>
       <div className={styles.hero}>
@@ -11,6 +13,7 @@ function Home() {
         />
         <div className={styles.heroText}>
           <h1>Welcome to HomePage</h1>
+          <h4>{name}</h4>
           <p>Your journey to Home Page!</p>
         </div>
       </div>
